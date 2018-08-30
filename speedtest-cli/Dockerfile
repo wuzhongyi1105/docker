@@ -1,6 +1,6 @@
-FROM python:2.7
-MAINTAINER imlonghao <imlonghao@gmail.com>
+FROM python:3.7-alpine
+LABEL maintainer="imlonghao"
 
-ADD https://raw.github.com/sivel/speedtest-cli/master/speedtest_cli.py /speedtest_cli.py
+ADD https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py /speedtest_cli.py
 
 CMD ["python","/speedtest_cli.py"]

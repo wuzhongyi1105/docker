@@ -7,8 +7,8 @@ RUN apk add --no-cache --virtual build-dependencies cmake g++ make boost-dev && 
     wget https://github.com/trojan-gfw/trojan/archive/v${version}.tar.gz && \
     tar zxf v${version}.tar.gz && \
     cd trojan-${version} && \
-    sed -i '1iset(Boost_USE_STATIC_LIBS ON)' CMakeLists.txt && \
-    sed -i '1iset(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")' CMakeLists.txt && \
+    sed -i '1iSET(Boost_USE_STATIC_LIBS ON)' CMakeLists.txt && \
+    sed -i '1iSET(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")' CMakeLists.txt && \
     cmake . && \
     make && \
     mv trojan /app && \

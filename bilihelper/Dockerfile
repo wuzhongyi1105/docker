@@ -18,7 +18,4 @@ RUN apk add --no-cache git && \
 
 ENTRYPOINT git pull && \
     php composer.phar install && \
-    cp /app/conf/user.conf.example /app/conf/user.conf && \
-    sed -i "s/APP_USER=/APP_USER=${USER_NAME}/g" /app/conf/user.conf && \
-    sed -i "s/APP_PASS=/APP_PASS=${USER_PASSWORD}/g" /app/conf/user.conf && \
     php index.php

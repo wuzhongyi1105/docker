@@ -16,4 +16,4 @@ RUN apk add --no-cache --virtual build-dependencies cmake g++ make boost-dev && 
     rm -rf /var/cache/apk /usr/share/man /app/trojan-${version} /app/v${version}.tar.gz
 EXPOSE 1080
 ENTRYPOINT [ "/app/trojan" ]
-CMD [ "config.json" ]
+CMD [ "conf/config.json" ]

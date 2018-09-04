@@ -1,4 +1,4 @@
-# docker/trojan
+# imlonghao/trojan
 
 An unidentifiable mechanism that helps you bypass GFW
 

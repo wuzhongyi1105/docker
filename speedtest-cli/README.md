@@ -1,4 +1,4 @@
-# docker/speedtest-cli
+# imlonghao/speedtest-cli
 
 ## How to use
 

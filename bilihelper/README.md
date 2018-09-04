@@ -1,4 +1,4 @@
-# docker/bilihelper
+# imlonghao/bilihelper
 
 A forked version from https://github.com/lkeme/BiliHelper
 

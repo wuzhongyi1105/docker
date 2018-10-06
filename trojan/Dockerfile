@@ -1,6 +1,6 @@
 FROM alpine
 LABEL maintainer="imlonghao"
-ARG version=1.8.0
+ARG version=1.8.1
 WORKDIR /app
 RUN apk add --no-cache --virtual build-dependencies cmake g++ make boost-dev && \
     apk add --no-cache mariadb-dev && \

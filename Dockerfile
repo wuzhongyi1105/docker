@@ -1,6 +1,14 @@
 FROM alpine
-LABEL maintainer="imlonghao"
-ARG version=1.8.1
+LABEL maintainer="DylanWu"
+
+ARG version=1.9.0
+
+ENV PORT_443=443
+ENV PASSWORD=
+ENV BACKEND_PORT=80
+ENV CERTS_PATH=
+ENV KEY_PATH=
+
 WORKDIR /app
 RUN apk add --no-cache --virtual build-dependencies cmake g++ make boost-dev && \
     apk add --no-cache mariadb-dev && \
@@ -14,6 +22,10 @@ RUN apk add --no-cache --virtual build-dependencies cmake g++ make boost-dev && 
     mv trojan /app && \
     apk del build-dependencies && \
     rm -rf /var/cache/apk /usr/share/man /app/trojan-${version} /app/v${version}.tar.gz
-EXPOSE 1080
-ENTRYPOINT [ "/app/trojan" ]
-CMD [ "conf/config.json" ]
+
+EXPOSE 1080 80 443
+
+VOLUME /etc/config
+
+COPY docker-entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]

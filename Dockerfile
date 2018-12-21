@@ -1,7 +1,7 @@
 FROM alpine
 LABEL maintainer="DylanWu"
 
-ARG version=1.9.0
+ARG version=1.8.1
 
 ENV PORT_443=443
 ENV PASSWORD=
